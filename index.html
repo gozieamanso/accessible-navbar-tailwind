@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="overflow-x-clip">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Navbar</title>
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body class="font-poppins bg-blue-700 text-white h-dvh overflow-x-clip">
+    <header class="flex justify-between items-center p-10 border-b border-white relative z-40">
+      <span>Bridge Collective</span>
+
+      <button id="hamburger" class="flex flex-col gap-1.5 cursor-pointer z-20
+      [&.active>span:nth-child(1)]:rotate-45 [&.active>span:nth-child(1)]:translate-y-2
+      [&.active>span:nth-child(2)]:opacity-0 
+      [&.active>span:nth-child(3)]:-rotate-45 [&.active>span:nth-child(3)]:-translate-y-2">
+        <span class="hamburger transition-transform duration-300 ease-out"></span>
+        <span class="hamburger transition-transform duration-300 ease-out"></span>
+        <span class="hamburger transition-transform duration-300 ease-out"></span>
+      </button>
+
+      <nav id="navMenu" class="bg-blue-700 p-10 absolute top-[calc(100%_+_2px)] right-0 w-full h-auto opacity-0 z-30
+      [clip-path:inset(0_0_100%_0)] transition-all duration-300 ease-in [&.active]:[clip-path:inset(0_0_0_0)] [&.active]:opacity-100 md:h-[calc(100vh_-_106px)] md:w-md md:py-20 md:overflow-y-auto md:[clip-path:none] md:opacity-100 md:translate-x-full [&.active]:translate-x-0">
+
+        <ul class="flex flex-col gap-5 text-2xl items-end">
+          <li><a class="linkAfter" href="#">About</a></li>
+          <li><a class="linkAfter" href="#">Our Work</a></li>
+          <li><a class="linkAfter" href="#">Partners</a></li>
+          <li><a class="linkAfter" href="#">Annual Report</a></li>
+          <li><a class="linkAfter" href="#">Donate</a></li>
+        </ul>
+
+      </nav>
+    </header>
+
+
+    <div id="overlay" class="fixed inset-[106px_0_0_0] bg-black/20 transition-all duration-300 ease-out z-10
+    opacity-0 [&.active]:opacity-100 pointer-events-none [&.active]:pointer-events-auto"></div>
+    <script src="src/js/app.js"></script>
+  </body>
+</html>
